@@ -1,0 +1,50 @@
+target:
+  catalog: example_catalog
+  schema: example_schema 
+  host: null 
+  warehouse_id: null
+
+# Governed tags are evaluated separately at table and column level.
+tags:
+  table:
+    owner: owner
+    lifecycle: lifecycle
+    classification: classification
+  column:
+    classification: pii
+
+# Keep patterns specific to avoid classifying non-personal fields by mistake.
+pii_column_name_patterns:
+  - email
+  - phone 
+  - first_name
+  - last_name
+  - full_name 
+  - address 
+
+# Fixed allowlist for the classification field.
+allowed_classifications:
+  - public
+  - internal
+  - confidential
+  - strictly_confidential
+
+# Fixed allowlist for the lifecycle field.
+allowed_lifecycles:
+  - latest
+  - prerelease
+  - decommissioned
+
+# Weight (points) contributed by each required field. Weights sum to 100.
+weights:
+  table_description: 20
+  column_descriptions: 20
+  owner: 20
+  lifecycle: 15
+  last_update: 10
+  classification: 15
+
+gate:
+  # An asset must reach at least this score and have no missing/invalid required
+  # field for the CI check to pass.
+  min_score: 80

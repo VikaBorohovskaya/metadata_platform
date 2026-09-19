@@ -1,0 +1,39 @@
+name: metadata-check
+
+# Portable CI for the Metadata Platform POC>
+on:
+  pull_request:
+    paths:
+      - "**"
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: Install dependencies
+        run: uv sync --extra dev
+      - name: Run unit tests (offline)
+        run: uv run pytest
+
+  metadata-gate:
+    runs-on: ubuntu-latest
+    # Only runs when Databricks credentials and a warehouse are configured.
+    if: ${{ vars.METADATA_WAREHOUSE_ID != '' }}
+    env:
+      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+      # Just for POC, avoid that for production use.
+      DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+      METADATA_WAREHOUSE_ID: ${{ vars.METADATA_WAREHOUSE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      - name: Install dependencies
+        run: uv sync
+      - name: Enforce metadata bar
+        run: uv run metadata-platform check

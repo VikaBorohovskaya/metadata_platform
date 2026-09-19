@@ -1,0 +1,6 @@
+# Review routing for the Metadata Platform PoC.
+# Replace the placeholder with the responsible reviewer or team handle.
+* @data-governance
+
+# Policy and scope changes deserve explicit governance review.
+/config/ @data-governance

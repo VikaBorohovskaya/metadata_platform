@@ -1,0 +1,314 @@
+{
+  "summary": {
+    "asset_count": 3,
+    "overall_average_score": 70.56,
+    "field_coverage": {
+      "table_description": 0.333,
+      "column_descriptions": 0.333,
+      "owner": 1.0,
+      "lifecycle": 1.0,
+      "last_update": 1.0,
+      "classification": 0.667
+    }
+  },
+  "assets": [
+    {
+      "asset": "example_catalog.example_schema.demo_customers_partial",
+      "score": 66.67,
+      "issues": [
+        "invalid_table_description",
+        "missing_column_descriptions"
+      ],
+      "fields": [
+        {
+          "name": "table_description",
+          "present": false,
+          "weight": 20,
+          "earned": 0.0,
+          "issue": "invalid_table_description",
+          "value": "Customer records.",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "column_descriptions",
+          "present": false,
+          "weight": 20,
+          "earned": 6.67,
+          "issue": "missing_column_descriptions",
+          "value": 0.33,
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "owner",
+          "present": true,
+          "weight": 20,
+          "earned": 20,
+          "issue": null,
+          "value": "example@org.com",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "lifecycle",
+          "present": true,
+          "weight": 15,
+          "earned": 15,
+          "issue": null,
+          "value": "latest",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "last_update",
+          "present": true,
+          "weight": 10,
+          "earned": 10,
+          "issue": null,
+          "value": "2026-09-19T12:44:39.245Z",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "classification",
+          "present": true,
+          "weight": 15,
+          "earned": 15,
+          "issue": null,
+          "value": "confidential",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        }
+      ]
+    },
+    {
+      "asset": "example_catalog.example_schema.demo_orders_complete",
+      "score": 100.0,
+      "issues": [],
+      "fields": [
+        {
+          "name": "table_description",
+          "present": true,
+          "weight": 20,
+          "earned": 20,
+          "issue": null,
+          "value": "Customer orders, one row per order.",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "column_descriptions",
+          "present": true,
+          "weight": 20,
+          "earned": 20.0,
+          "issue": null,
+          "value": 1.0,
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "owner",
+          "present": true,
+          "weight": 20,
+          "earned": 20,
+          "issue": null,
+          "value": "data-commerce",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "lifecycle",
+          "present": true,
+          "weight": 15,
+          "earned": 15,
+          "issue": null,
+          "value": "latest",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "last_update",
+          "present": true,
+          "weight": 10,
+          "earned": 10,
+          "issue": null,
+          "value": "2026-09-19T12:44:37.672Z",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "classification",
+          "present": true,
+          "weight": 15,
+          "earned": 15,
+          "issue": null,
+          "value": "internal",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        }
+      ]
+    },
+    {
+      "asset": "example_catalog.example_schema.demo_payments_sparse",
+      "score": 45.0,
+      "issues": [
+        "missing_table_description",
+        "missing_column_descriptions",
+        "missing_classification"
+      ],
+      "fields": [
+        {
+          "name": "table_description",
+          "present": false,
+          "weight": 20,
+          "earned": 0.0,
+          "issue": "missing_table_description",
+          "value": null,
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "column_descriptions",
+          "present": false,
+          "weight": 20,
+          "earned": 0.0,
+          "issue": "missing_column_descriptions",
+          "value": 0.0,
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "owner",
+          "present": true,
+          "weight": 20,
+          "earned": 20,
+          "issue": null,
+          "value": "data-finance",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "lifecycle",
+          "present": true,
+          "weight": 15,
+          "earned": 15,
+          "issue": null,
+          "value": "prerelease",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "last_update",
+          "present": true,
+          "weight": 10,
+          "earned": 10,
+          "issue": null,
+          "value": "2026-09-19T12:44:40.324Z",
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        },
+        {
+          "name": "classification",
+          "present": false,
+          "weight": 15,
+          "earned": 0.0,
+          "issue": "missing_classification",
+          "value": null,
+          "provenance": {
+            "source": "observed",
+            "status": "observed",
+            "generated_at": "2026-09-19T12:44:40.409449+00:00",
+            "confidence": null,
+            "approved_by": null
+          }
+        }
+      ]
+    }
+  ]
+}
